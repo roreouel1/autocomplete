@@ -21,61 +21,73 @@ class SubjectSeeder extends Seeder
             
                 'name' =>'Our World Our People',
                 'st' => '',
+                'code'=>'SUB111'
             ],
             [
             
                 'name' =>'Language and Literacy',
                 'st' => '',
+                'code'=>'SUB112'
             ],
             [
             
                 'name' =>'Numeracy',
                 'st' => '',
+                'code'=>'SUB113'
             ],
             [
             
                 'name' =>'Creativity ',
                 'st' => '',
+                'code'=>'SUB114'
             ],
             [
             
                 'name' =>'English',
                 'st' => '',
+                'code'=>'SUB115'
             ],   
             [
             
                 'name' =>'Mathematics',
                 'st' => '',
+                'code'=>'SUB116'
             ],
             [
             
                 'name' =>'Science',
                 'st' => '',
+                'code'=>'SUB117'
             ],
             [
             
                 'name' =>'R M.E',
                 'st' => '',
+                'code'=>'SUB118'
             ],
             [
             
                 'name' =>'Creative Art',
                 'st' => '',
+                'code'=>'SUB119'
             ],
             [
             
                 'name' =>'Twi',
                 'st' => '',
+                'code'=>'SUB120'
             ],
             [
             
                 'name' =>'French',
                 'st' => '',
+                'code'=>'SUB121'
             ], 
             [
             
                 'name' =>'Computing',
                 'st' => '',
+                'code'=>'SUB122'
             ],
         ]);
         }

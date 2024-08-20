@@ -1,5 +1,5 @@
                        {{-- Auto complete for student info --}}
-<script type="text/javascript">
+                       <script type="text/javascript">
 
 // CSRF Token
 
@@ -739,5 +739,7 @@ $(document).ready(function(){
         });
 
       });
+
+
 
 </script>

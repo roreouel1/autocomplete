@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+}
+
+h1,h2,h3,p{
+   text-align:center;
+}
+
+
+#printbtn{
+padding:5px 10px 5px 10px;
+margin-bottom: 30px;
+font-family: Arial, sans-serif;
+
+}
+
+.flexer{
+    display:inline-flex;
+}
+
+.card-body,.table-striped>tbody>tr:nth-of-type(odd)>*{
+background:#d7ebf0;
+margin:50px 100px 100px 50px;
+}
+
+table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card,body{
+background:#e5faff;
+
+}
+
+input[type="text"]:focus{
+  border:1px solid #211cff!important; /* Changes the border color to #211cff when focused */
+  outline:none!important;
+  box-shadow: none; 
+}
+
+.item{
+  margin:50px 100px 50px 100px;
+}
+
+/* .show_confirm{
+    padding:5px 10px 5px 10px;
+} */
+
+.button-center{
+    margin-left: 200px;
+    margin-right:200px;
+}
+
+.break {
+    background-color: #f8f9fa; /* light gray background */
+    font-weight: bold;
+    text-align: center;
+}

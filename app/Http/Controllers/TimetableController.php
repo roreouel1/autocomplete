@@ -5,9 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Subject;
 use Illuminate\Http\Request;
 use App\Models\Timetable;
-use App\Models\Classe;
+use App\Models\Classes;
 use App\Models\Times;
-use App\Models\Setting;
+
 use Auth;
 use Barryvdh\DomPDF\Facade\Pdf;
 
@@ -24,7 +24,7 @@ class TimetableController extends Controller
 
    public function index(){
 
-    $data = Timetable::select('clss','scid')
+    $data = Timetable::select('clss')
     ->distinct()
     ->get();
 
@@ -35,7 +35,6 @@ class TimetableController extends Controller
    //pdf data populator
    public function edit($clss)
    {
-       $scid = Auth::user()->scid;
 
        $timetable = Timetable::
              orderBy('day')
@@ -45,7 +44,7 @@ class TimetableController extends Controller
 
        $times = Times::all();
        $this->sender = [
-           'title' => 'Bresillac Catholic School',
+           'title' => 'Sample Timetable',
            'timetable' => $timetable,
            'times' => $times,
        ];
@@ -64,7 +63,8 @@ class TimetableController extends Controller
    }
    public function create(){
     $times = Times::all();
-    return view('timetable.generator',compact('times'));
+    $classes = Classes::all();
+    return view('timetable.generator',compact('times','classes'));
    }
 
    public function store(Request $request){
@@ -126,17 +126,17 @@ class TimetableController extends Controller
 
    public function autoComplete(Request $request)
 {
-    $role=Auth::user()->scid;
+
     $query =$request->get('search', '');  
-    $subjects= Subject::orderby('name','asc')->select('name','code') 
-                                             ->Where('name','LIKE',$query. '%') 
-                                              ->limit(10)->get();
+    $students= Subject::orderby('name','asc')->select('name') 
+                                                                     ->Where('name',  'LIKE',$query. '%') 
+                                                                     ->limit(10)->get();
 
 
     $response=array();
-     foreach ($subjects as $subject) {
+     foreach ($students as $student) {
        
-        $response[]=array('value'=>$subject->name);
+        $response[]=array('value'=>$student->name);
     }
     if(count($response))
           
@@ -146,4 +146,5 @@ class TimetableController extends Controller
    return ['value'=>'No Result Found'];
     }
 } 
+
 

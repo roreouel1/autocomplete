@@ -1,41 +1,18 @@
-<html><body>
-	
 
-<div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-           
-             
-            </div>
-
-            <div class="clearfix"></div>
+@extends('main')
+@section('content')  
+<!-- page content -->
 
             <div class="row">
-              <div class="col-md-12 col-sm-12  ">
-                <div class="x_panel">
-                  <div class="x_title">
-                    <h2>Time Tables</h2>
-                      <!-- <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul> -->
-                    <div class="clearfix"></div>
-                  </div>
-                  <div class="x_content">
+              <div class="col-md-8 col-sm-8  ">
+                    <h2>Time Tables</h2>             
+             </div>
+                
                      
                 <div class="col-md-8 col-sm-8 ">
                 <div class="buttons">
                                             <!-- Standard button -->
-                <a id="printbtn" class="btn btn-primary btn-lg fa fa-user-plus" href="{{route('timet.create')}}"></a>
+    <a  id="printbtn" class="btn btn-primary btn-md fa fa-plus" href="{{route('timet.create')}}">Create</a> 
               
                 <style type="text/css">
                        @media print {
@@ -73,18 +50,18 @@
                           <tr class="even pointer">            
                         
                             <td class=" ">{{{$i->clss}}}</td>
-                            <td id="printbtn" class=" ">
-                            
-                                           
-                          <a href="{{ route('timet.edit', $i->clss)}}" class="btn btn-info btn-sm"><i class="fa fa-print"></i>Print</a>
+                            <td id="" class="">
+                              <a href="{{ route('timet.edit', $i->clss) }}" class="btn btn-info btn-sm">
+                                  <i class="fa fa-print"></i> Print
+                              </a>
 
-                           
-                         <form class="change" action="{{ route('timet.destroy',$i->clss) }}" method="POST">
-
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit"  class="btn btn-danger btn-sm show_confirm"><i class="fa fa-trash-o"></i>Delete</button>
-                            </form> 
+                              <form class="change" action="{{ route('timet.destroy', $i->clss) }}" method="POST" style="display:inline;">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="btn btn-danger btn-sm show_confirm">
+                                      <i class="fa fa-trash"></i> Delete
+                                  </button>
+    </form>
 
                             <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
                   <script type="text/javascript">
@@ -125,10 +102,6 @@
 
                   </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- /page content -->
-        </body></html>
+       
+   @endsection

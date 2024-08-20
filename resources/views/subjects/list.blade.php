@@ -1,43 +1,21 @@
-<html><body>
-	
-<!-- page content -->
-<div class="right_col" role="main">
-          <div class="">
-            <div class="page-title">
-           
-             
-            </div>
 
-            <div class="clearfix"></div>
+@extends('main')
+@section('content')  
+<!-- page content -->
 
             <div class="row">
-              <div class="col-md-12 col-sm-12  ">
-                <div class="x_panel">
-                  <div class="x_title">
+              <div class="col-md-8 col-sm-8 ">
+
                     <h2>Add subjects</h2>
-                      <!-- <ul class="nav navbar-right panel_toolbox">
-                      <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-                      </li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Settings 1</a>
-                            <a class="dropdown-item" href="#">Settings 2</a>
-                          </div>
-                      </li>
-                      <li><a class="close-link"><i class="fa fa-close"></i></a>
-                      </li>
-                    </ul> -->
+                    
                     <div class="clearfix"></div>
                   </div>
-                  <div class="x_content">
+             
                      
                 <div class="col-md-8 col-sm-8 ">
                 <div class="buttons">
                                             <!-- Standard button -->
-                <a  id="printbtn" class="btn btn-primary btn-lg fa fa-user-plus" href="{{route('subs.create')}}"></a>
-                <a id="printbtn"  class="btn btn-success btn-sm" onclick="window.print();"><i class="fa fa-print"></i>Print</a>
-                
+                <a  id="printbtn" class="btn btn-primary btn-md fa fa-plus" href="{{route('subs.create')}}">Add</a> 
                 </div>
                 <style type="text/css">
                         @media print {
@@ -75,10 +53,10 @@
 
                             @csrf
                             @method('DELETE')
-                            <button type="submit"  class="btn btn-danger btn-sm show_confirm"><i class="fa fa-trash-o"></i></button>
+                            <button type="submit"  class="btn btn-danger btn-sm show_confirm"><i class="fa fa-trash"></i></button>
                             </form>
 
-                            <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+                  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
                   <script type="text/javascript">
                   
                       $('.show_confirm').click(function(event) {
@@ -119,11 +97,7 @@
 
                   </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- /page content -->
+               
 
-        </body></html>
+        <!-- /page content -->
+@endsection

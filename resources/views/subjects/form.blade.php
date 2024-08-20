@@ -1,32 +1,15 @@
-<html><body>
-	    
+
+@extends('main')
+@section('content')  
 <!-- page content -->
-<div class="right_col" role="main">
-	<div class="">
-	  
-	  <div class="clearfix"></div>
+
 
 	  <div class="row">
 		<div class="col-md-12 col-sm-12  ">
-		  <div class="x_panel">
-			<div class="x_title">
 				<h2>Add subjects</h2>
-			  <!-- <ul class="nav navbar-right panel_toolbox">
-				<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
-				</li>
-				<li class="dropdown">
-				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
-				  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-					  <a class="dropdown-item" href="#">Settings 1</a>
-					  <a class="dropdown-item" href="#">Settings 2</a>
-					</div>
-				</li>
-				<li><a class="close-link"><i class="fa fa-close"></i></a>
-				</li>
-			  </ul> -->
 			  <div class="clearfix"></div>
 			</div>
-			<div class="x_content">
+	
 			<div class="col-12">
 		  <div class="card">
 			<div class="card-body">
@@ -36,19 +19,7 @@
 									  <!-- Standard button -->
 							  <a  id="printbtn" class="btn btn-success btn-sm" href="{{route('subs.index')}}"><i class="fa fa-bars"></i>List</a>
 							  </div>
-						  
-	   
-		  <!-- flash message div -->
-		  <div x-data="{show: true}" x-init="setTimeout(() => show = false,1500)" x-show="show">
-			<div class="flash-message">
-								  @foreach (['danger', 'warning', 'success', 'info'] as $msg)
-							   @if(Session::has('alert-' . $msg))
-							  <p class="alert alert-{{ $msg }}">{{ Session::get('alert-' . $msg) }} <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a></p>
-								@endif
-								 @endforeach
-					  </div> 
-			  </div>
-		  <!-- end flash-message -->
+						
       <form  id="form" class="form-sample" method="POST" action="{{route('subs.store')}}">
         @csrf
            
@@ -60,7 +31,7 @@
                 <div class="col-sm-9">
                   <input type="text" name="name" id="name" class="form-control typeahead" value="{{old('name')}}"/>
                   @error('name')
-                  <span class="mt-5 text-danger"> {{$message}}</span>
+                  <span class="mt-5 text-danger">{{$message}}</span>
                   @enderror   
                 </div>
               </div>
@@ -112,16 +83,14 @@
         </form>
 
 			
-			</div>
-		  </div>
-		</div>
-			</div>
-		  </div>
-		</div>
-	  </div>
-	</div>
-  </div>
-  <!-- /page content -->
 
-  </body></html>
+
+			</div>
+		  </div>
+      </div>
+		
+
+  <!-- /page content -->
+@endsection
+
 
