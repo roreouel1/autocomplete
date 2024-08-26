@@ -24,20 +24,9 @@ Route::get('/', function () {
 
 
 /* ==========================================
-* Timetable generator
+* Form Data Routes
 ========================================== */
-Route::resource('timet', App\Http\Controllers\TimetableController::class);
-Route::post('/searchsub',[App\Http\Controllers\TimetableController::class,'autoComplete'])->name('searchsub');
-Route::get('/listt',[App\Http\Controllers\TimetableController::class,'display'])->name('listt');
+Route::resource('formData',App\Http\Controllers\ACController::class);
+Route::post('/searchdata',[App\Http\Controllers\ACController::class,'autoComplete'])->name('searchdata');
 
 
-/* ==========================================
-* Subjects routes
-==========================================  */
-Route::resource('subs', App\Http\Controllers\SubjectController::class);
-
-
-/* ==========================================
-* Classes routes
-==========================================  */
-Route::resource('classes', App\Http\Controllers\ClassesController::class);

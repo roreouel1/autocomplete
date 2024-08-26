@@ -23,6 +23,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            background:#f6d6e9;
         }
 
         .inline {
@@ -80,9 +81,9 @@
         <img src="img/man.jpg" height="300px" width="300px" alt="" class="man">
         <div>
             <h1>Kwaku Hope</h1>
-            <h2>Sample Timetable Code</h2>
+            <h2>Sample Autocomplete Code</h2>
             <span class="text-gray-500"> Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})</span>
-             <a href="{{route('subs.index')}}" class="link">Lets go<i class="fa fa-arrow-right"></i></a> 
+             <a href="{{route('formData.index')}}" class="link">Lets go<i class="fa fa-arrow-right"></i></a> 
         </div>
    
         </div>
